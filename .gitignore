@@ -1,0 +1,22 @@
+# RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Los csv descomprimidos del SEPA se regeneran con 01_limpieza.R
+input/csv/
+
+# Los datos procesados los regeneran los scripts 01 a 04 en segundos.
+# No se versionan: son derivados, no fuente. Los datos de origen (raw/ y
+# auxiliar/) si estan en el repositorio, que es lo que hace falta para
+# reproducir todo.
+input/*.rds
+
+# Paquete que armamos solo para pasarnos el codigo entre nosotros
+codigo.zip
+tp-grupo03.zip

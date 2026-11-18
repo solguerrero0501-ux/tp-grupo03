@@ -1,0 +1,46 @@
+id_producto,rubro,producto,cantidad
+7790070562258,Almacen,"Harina 000, 1 kg",2
+7790070320285,Almacen,"Fideos secos largos, 500 g",4
+7791120031557,Almacen,"Arroz largo fino, 1 kg",2
+7790060023684,Almacen,"Aceite de girasol, 1,5 L",1
+7790580138868,Almacen,"Pure de tomate, 530 g",4
+7790580131364,Almacen,"Atun al natural, 170 g",2
+7790580132422,Almacen,"Choclo en lata, 300 g",2
+7792350067019,Almacen,"Arvejas en lata, 300 g",2
+7790580138721,Almacen,"Polenta, 730 g",1
+7790199604587,Almacen,"Avena, 400 g",1
+7792900000428,Almacen,"Sal fina, 500 g",1
+7790139003173,Almacen,"Vinagre de alcohol, 1 L",1
+7794000008540,Almacen,"Caldo en cubos, 12 unidades",1
+7792180004741,Almacen,"Pan rallado, 500 g",1
+7791866001364,Almacen,"Mayonesa, 475 g",1
+7791866000381,Almacen,"Ketchup, 250 g",1
+7790580123437,Almacen,"Mermelada de ciruela, 454 g",1
+7790244001453,Almacen,"Dulce de leche, 400 g",1
+7794940000536,Almacen,"Azucar, 500 g",2
+7792710000182,Infusiones,"Yerba mate, 500 g",2
+7790550000157,Infusiones,"Cafe molido, 250 g",1
+7790150211908,Infusiones,"Te en saquitos, 25 unidades",1
+7790742192301,Lacteos,"Leche entera, 1 L",15
+7798060850026,Lacteos,"Manteca, 200 g",1
+7798060853003,Lacteos,"Queso untable, 180 g",2
+7793913013528,Lacteos,"Yogur, 125 g",8
+7790398100132,Lacteos,"Queso rallado, 150 g",1
+7790040377707,Panificados,"Galletitas saladas, 100 g",4
+7790813150131,Panificados,"Levadura seca, 10 g",2
+7790895000997,Bebidas,"Gaseosa cola, 2,25 L",4
+7790639002416,Bebidas,"Agua sin gas, 2 L",6
+7793147118860,Bebidas,"Cerveza en lata, 473 cc",6
+7790895007392,Bebidas,"Gaseosa pomelo, 2,25 L",2
+7790990003039,Limpieza,"Detergente, 500 ml",2
+7793253003715,Limpieza,"Lavandina, 1 L",2
+7790250015857,Limpieza,"Papel higienico, 4 rollos",4
+7791290792814,Limpieza,"Jabon liquido para ropa, 800 ml",1
+7791130002776,Limpieza,"Limpiador liquido, 420 ml",1
+7793253386160,Limpieza,Esponja de acero,2
+7790740000264,Higiene,"Shampoo, 1 L",1
+7790740000318,Higiene,"Acondicionador, 1 L",1
+7791293051208,Higiene,"Jabon de tocador, 90 g",3
+7509546686523,Higiene,"Pasta dental, 90 g",2
+7791969029807,Higiene,"Desodorante, 150 ml",1
+7791293046129,Higiene,"Jabon liquido de manos, 250 ml",1

@@ -1,0 +1,12 @@
+medida,valor
+HHI por empresa (ciudad),3846.913580246914
+HHI por bandera (ciudad),3451.851851851852
+CR1,53.333333333333336
+CR2,77.77777777777777
+CR3,97.77777777777777
+barrios con una sola empresa,21
+barrios analizados,28
+correlacion HHI-costo (Pearson r),0.22881952608324177
+p-valor Pearson,0.24151224666992788
+correlacion HHI-costo (Spearman rho),0.3081205073012862
+p-valor Spearman,0.11067324190326377

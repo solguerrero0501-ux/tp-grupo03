@@ -1,0 +1,10 @@
+# Los archivos de texto se guardan con finales de linea LF en el repositorio,
+# asi el codigo se ve igual en Windows, en Mac y en Linux.
+* text=auto eol=lf
+
+# Binarios: que git no los toque
+*.zip   binary
+*.xlsx  binary
+*.png   binary
+*.jpg   binary
+*.rds   binary
