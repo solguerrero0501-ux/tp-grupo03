@@ -20,3 +20,6 @@ input/*.rds
 # Paquete que armamos solo para pasarnos el codigo entre nosotros
 codigo.zip
 tp-grupo03.zip
+
+# Guion interno para la oral, no es parte de la entrega
+presentacion/guion_oral.md
