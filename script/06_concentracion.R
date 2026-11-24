@@ -100,19 +100,18 @@ g_rep <- reparto_empresa |>
                      expand = expansion(mult = c(0, 0.16))) +
   labs(
     title    = paste0("Cuatro empresas se reparten los 45 hipermercados de la Ciudad"),
-    subtitle = paste0("Participaci\u00f3n de cada empresa en la cantidad de hipermercados de la ",
+    subtitle = envolver(paste0("Participaci\u00f3n de cada empresa en la cantidad de hipermercados de la ",
                       "Ciudad de Buenos Aires, 11-09-2026.\nEl \u00edndice de Herfindahl-Hirschman ",
                       "da ", formato_num(hhi_empresa, 0), " puntos; por encima de 2.500 se ",
-                      "considera un mercado\naltamente concentrado."),
+                      "considera un mercado\naltamente concentrado."), ANCHO_BAJADA),
     x        = "Empresa",
     y        = "Participaci\u00f3n en la cantidad de hipermercados (%)",
-    caption  = paste(PIE_FUENTE,
-                     "\nLa participaci\u00f3n se mide en cantidad de sucursales, no en facturaci\u00f3n: el SEPA no publica ventas.")
-  ) +
+    caption  = envolver(paste(PIE_FUENTE,
+                     "\nLa participaci\u00f3n se mide en cantidad de sucursales, no en facturaci\u00f3n: el SEPA no publica ventas."), ANCHO_PIE)) +
   tema_tp() +
   theme(panel.grid.major.y = element_blank())
 
-guardar_grafico(g_rep, "06_reparto_mercado", ancho = 20, alto = 11)
+guardar_grafico(g_rep, "06_reparto_mercado", ancho = 24, alto = 13)
 
 
 # ===========================================================================
@@ -211,24 +210,23 @@ g_hhi <- barrios |>
   geom_jitter(width = 180, height = 0, size = 2.6, colour = AZUL, alpha = 0.8) +
   scale_x_continuous(breaks = c(3750, 5000, 10000),
                      labels = function(x) formato_num(x, 0)) +
-  scale_y_continuous(labels = function(x) formato_millones(x, 0)) +
+  scale_y_continuous(labels = function(x) formato_pesos(x)) +
   labs(
     title    = "Donde hay un solo supermercado no se paga m\u00e1s caro",
-    subtitle = paste0("Cada punto es uno de los ", nrow(barrios), " barrios de la Ciudad con al ",
+    subtitle = envolver(paste0("Cada punto es uno de los ", nrow(barrios), " barrios de la Ciudad con al ",
                       "menos un hipermercado. El eje horizontal es el \u00edndice de\nHerfindahl-Hirschman ",
                       "del barrio: 10.000 significa que todas sus bocas son de la misma empresa.\n",
-                      "La correlacion no es significativa (r = ", formato_num(pearson$estimate, 2),
+                      "La correlaci\u00f3n no es significativa (r = ", formato_num(pearson$estimate, 2),
                       ", p = ", formato_num(pearson$p.value, 2), "): la concentraci\u00f3n del barrio ",
-                      "no explica su precio."),
-    x        = "\u00cdndice de Herfindahl-Hirschman del barrio (puntos, m\u00e1ximo 10.000)",
-    y        = "Costo de la canasta mensual de 45 productos (pesos)",
-    caption  = paste(PIE_FUENTE,
+                      "no explica su precio."), ANCHO_BAJADA),
+    x        = "\u00cdndice de Herfindahl-Hirschman del barrio (m\u00e1ximo 10.000)",
+    y        = "Costo de la canasta mensual (pesos)",
+    caption  = envolver(paste(PIE_FUENTE,
                      "\nLos puntos se separan levemente en horizontal para que no se superpongan: 21 de los 28 barrios tienen un HHI de 10.000.",
-                     "\nEl eje vertical no arranca en cero. La banda gris es el intervalo de confianza del 95% de la recta de regresion.")
-  ) +
+                     "\nEl eje vertical no arranca en cero. La banda gris es el intervalo de confianza del 95% de la recta de regresi\u00f3n."), ANCHO_PIE)) +
   tema_tp()
 
-guardar_grafico(g_hhi, "06_hhi_vs_precio", ancho = 20, alto = 12)
+guardar_grafico(g_hhi, "06_hhi_vs_precio", ancho = 24, alto = 14)
 
 
 cat("\nlisto. Ya se puede correr 07_graficos.R\n")

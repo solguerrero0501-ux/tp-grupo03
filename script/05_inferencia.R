@@ -263,19 +263,18 @@ g <- suc |>
   scale_x_continuous(labels = function(x) formato_num(x, 0)) +
   labs(
     title    = "Cada cadena fija un precio y lo repite en todas sus sucursales",
-    subtitle = paste("\u00cdndice de precios de cada una de las 45 sucursales, por cadena.",
+    subtitle = envolver(paste("\u00cdndice de precios de cada una de las 45 sucursales, por cadena.",
                      "Cada punto es una sucursal.\nEl \u00edndice es el precio promedio de la",
                      "canasta comparable de 1.257 productos respecto del\npromedio de las",
-                     "siete banderas: 100 es cobrar como el promedio del mercado."),
+                     "siete banderas: 100 es cobrar como el promedio del mercado."), ANCHO_BAJADA),
     x        = "\u00cdndice de precios de la sucursal (promedio de las siete banderas = 100)",
     y        = "Cadena",
-    caption  = paste(PIE_FUENTE,
-                     "\nEl eje horizontal no arranca en cero. Maxi y HiperChangomas tienen una sola sucursal en la Ciudad.")
-  ) +
+    caption  = envolver(paste(PIE_FUENTE,
+                     "\nEl eje horizontal no arranca en cero. Maxi y HiperChangomas tienen una sola sucursal en la Ciudad."), ANCHO_PIE)) +
   tema_tp() +
   theme(panel.grid.major.y = element_blank())
 
-guardar_grafico(g, "05_indice_por_cadena", ancho = 20, alto = 11)
+guardar_grafico(g, "05_indice_por_cadena", ancho = 24, alto = 13)
 
 
 cat("\nlisto. Ya se puede correr 06_concentracion.R\n")

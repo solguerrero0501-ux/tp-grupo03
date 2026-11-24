@@ -69,18 +69,17 @@ g_falt <- faltantes |>
                      expand = expansion(mult = c(0, 0.16))) +
   labs(
     title    = "Los faltantes se concentran en los campos de promociones",
-    subtitle = paste("Porcentaje de observaciones sin dato, sobre",
+    subtitle = envolver(paste("Porcentaje de observaciones sin dato, sobre",
                      formato_num(nrow(base)), "observaciones.",
-                     "Solo se muestran las variables que tienen al menos un faltante."),
+                     "Solo se muestran las variables que tienen al menos un faltante."), ANCHO_BAJADA),
     x        = "Variable",
     y        = "Observaciones sin dato (% del total)",
-    caption  = paste0(PIE_FUENTE,
-                      " Hipermercados de la Ciudad de Buenos Aires, 11 de septiembre de 2026.")
-  ) +
+    caption  = envolver(paste0(PIE_FUENTE,
+                      " Hipermercados de la Ciudad de Buenos Aires, 11 de septiembre de 2026."), ANCHO_PIE)) +
   tema_tp() +
   theme(panel.grid.major.y = element_blank())
 
-guardar_grafico(g_falt, "03_faltantes", ancho = 20, alto = 12)
+guardar_grafico(g_falt, "03_faltantes", ancho = 24, alto = 14)
 
 
 # ===========================================================================
@@ -216,18 +215,17 @@ g_crit <- data.frame(
                 expand = expansion(mult = c(0, 0.18))) +
   labs(
     title    = "Los criterios de manual marcan el surtido, no los errores",
-    subtitle = paste("Observaciones marcadas como atipicas por cada criterio, sobre",
+    subtitle = envolver(paste("Observaciones marcadas como at\u00edpicas por cada criterio, sobre",
                      formato_num(sum(!is.na(p))), "precios.\nEl criterio elegido",
                      "es el tercero: comparar cada precio contra el de ese mismo",
-                     "producto\nen las demas sucursales."),
+                     "producto\nen las demas sucursales."), ANCHO_BAJADA),
     x        = "Criterio de detecci\u00f3n",
-    y        = "Observaciones marcadas (cantidad, escala logar\u00edtmica)",
-    caption  = paste(PIE_FUENTE,
-                     "\nEl eje vertical esta en escala logar\u00edtmica porque los tres criterios difieren en varios \u00f3rdenes de magnitud.")
-  ) +
+    y        = "Observaciones marcadas (escala logar\u00edtmica)",
+    caption  = envolver(paste(PIE_FUENTE,
+                     "\nEl eje vertical est\u00e1 en escala logar\u00edtmica porque los tres criterios difieren en varios \u00f3rdenes de magnitud."), ANCHO_PIE)) +
   tema_tp()
 
-guardar_grafico(g_crit, "03_criterios_outliers", ancho = 20, alto = 12)
+guardar_grafico(g_crit, "03_criterios_outliers", ancho = 24, alto = 14)
 
 
 # ===========================================================================

@@ -108,17 +108,16 @@ g1 <- ggplot(expl, aes(x = rel, y = cadena)) +
                      labels = function(x) formato_num(x, 1)) +
   labs(
     title    = "Solo una cadena se despega, y no se despega igual en todo",
-    subtitle = paste0("Canasta de 1.257 productos con c\u00f3digo de barras que se venden en las siete cadenas, ",
+    subtitle = envolver(paste0("Canasta de 1.257 productos con c\u00f3digo de barras que se venden en las siete cadenas, ",
                       "en los 45 hipermercados\nde la Ciudad de Buenos Aires, el 11 de septiembre de 2026. ",
                       "Los paneles van de la categor\u00eda donde m\u00e1s se separan\nlas cadenas a la categor\u00eda ",
-                      "donde menos se separan."),
+                      "donde menos se separan."), ANCHO_BAJADA),
     x        = "Precio del producto dividido por su precio promedio en las siete cadenas (1,0 = el promedio del mercado)",
     y        = NULL,
-    caption  = paste0(PIE_FUENTE, "\n",
+    caption  = envolver(paste0(PIE_FUENTE, "\n",
                       "La caja va del primer al tercer cuartil y la l\u00ednea del medio es la mediana; los bigotes llegan hasta 1,5 veces\n",
                       "el rango intercuartil. No se dibujan los valores at\u00edpicos individuales. 52.732 observaciones.\n",
-                      "Carrefour, Market y Maxi son banderas de INC S.A.; Jumbo y Vea, de Cencosud S.A.")
-  ) +
+                      "Carrefour, Market y Maxi son banderas de INC S.A.; Jumbo y Vea, de Cencosud S.A."), ANCHO_PIE)) +
   tema_tp(base_size = 10) +
   theme(panel.grid.major.y = element_blank(),
         panel.spacing.x    = unit(0.5, "lines"),
@@ -213,18 +212,17 @@ g2 <- ggplot() +
                      expand = expansion(mult = 0.035)) +
   labs(
     title    = "El precio de la canasta lo fija la cadena, no el barrio",
-    subtitle = paste0("Cu\u00e1nto cuesta la misma compra mensual de 45 productos en los hipermercados de cada barrio de la\n",
+    subtitle = envolver(paste0("Cu\u00e1nto cuesta la misma compra mensual de 45 productos en los hipermercados de cada barrio de la\n",
                       "Ciudad de Buenos Aires, el 11 de septiembre de 2026. Cada punto gris es una sucursal; el azul es el\n",
-                      "promedio del barrio. Al lado del nombre figuran las cadenas que tienen un hipermercado ah\u00ed."),
+                      "promedio del barrio. Al lado del nombre figuran las cadenas que tienen un hipermercado ah\u00ed."), ANCHO_BAJADA),
     x        = "Costo de la canasta mensual de 45 productos (pesos)",
     y        = "Barrio \u00b7 cadenas presentes",
-    caption  = paste0(PIE_FUENTE, "\n",
+    caption  = envolver(paste0(PIE_FUENTE, "\n",
                       "La canasta son 45 productos de consumo habitual con cantidades mensuales, elegidos entre los 1.257 que se\n",
                       "venden en las siete cadenas. No incluye frescos: la carne, la fruta y la verdura no tienen c\u00f3digo de barras com\u00fan\n",
                       "entre cadenas. El 6,8% de las l\u00edneas se val\u00faa al precio mediano de su cadena, para que todas las sucursales\n",
                       "compren la misma canasta. Los barrios salen de cruzar la coordenada de cada local con los pol\u00edgonos oficiales\n",
-                      "de la Ciudad. Son precios de lista: la norma no obliga a publicar promociones. El eje horizontal no arranca en cero.")
-  ) +
+                      "de la Ciudad. Son precios de lista: la norma no obliga a publicar promociones. El eje horizontal no arranca en cero."), ANCHO_PIE)) +
   tema_tp(base_size = 10) +
   theme(panel.grid.major.y = element_blank(),
         axis.text.y        = element_text(size = 8.2))

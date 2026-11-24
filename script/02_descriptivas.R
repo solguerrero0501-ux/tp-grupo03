@@ -95,17 +95,16 @@ g_suc <- por_bandera |>
   scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
   labs(
     title    = "Coto concentra m\u00e1s de la mitad de los hipermercados de la Ciudad",
-    subtitle = paste("Cantidad de sucursales de cada cadena entre los 45",
-                     "hipermercados de la Ciudad de Buenos Aires, 11-09-2026."),
+    subtitle = envolver(paste("Cantidad de sucursales de cada cadena entre los 45",
+                     "hipermercados de la Ciudad de Buenos Aires, 11-09-2026."), ANCHO_BAJADA),
     x        = "Cadena",
     y        = "Sucursales (cantidad)",
-    caption  = paste0(PIE_FUENTE,
-                      " Hipermercados de la Ciudad de Buenos Aires, 11 de septiembre de 2026.")
-  ) +
+    caption  = envolver(paste0(PIE_FUENTE,
+                      " Hipermercados de la Ciudad de Buenos Aires, 11 de septiembre de 2026."), ANCHO_PIE)) +
   tema_tp() +
   theme(panel.grid.major.y = element_blank())
 
-guardar_grafico(g_suc, "02_sucursales_por_cadena", ancho = 20, alto = 11)
+guardar_grafico(g_suc, "02_sucursales_por_cadena", ancho = 24, alto = 13)
 
 
 # ===========================================================================
@@ -157,16 +156,15 @@ g_dist <- base |>
   scale_y_continuous(labels = function(x) formato_num(x)) +
   labs(
     title    = "El precio de un producto de supermercado abarca cuatro \u00f3rdenes de magnitud",
-    subtitle = paste("Distribucion del precio de lista de las", formato_num(sum(!is.na(p))),
-                     "observaciones de la base, antes de cualquier limpieza."),
+    subtitle = envolver(paste("Distribuci\u00f3n del precio de lista de las", formato_num(sum(!is.na(p))),
+                     "observaciones de la base, antes de cualquier limpieza."), ANCHO_BAJADA),
     x        = "Precio de lista (pesos, escala logar\u00edtmica)",
     y        = "Observaciones (cantidad)",
-    caption  = paste(PIE_FUENTE,
-                     "\nEl eje horizontal esta en escala logar\u00edtmica: cada marca vale diez veces la anterior.")
-  ) +
+    caption  = envolver(paste(PIE_FUENTE,
+                     "\nEl eje horizontal est\u00e1 en escala logar\u00edtmica: cada marca vale diez veces la anterior."), ANCHO_PIE)) +
   tema_tp()
 
-guardar_grafico(g_dist, "02_distribucion_precio", ancho = 20, alto = 11)
+guardar_grafico(g_dist, "02_distribucion_precio", ancho = 24, alto = 13)
 
 
 # ===========================================================================
@@ -208,17 +206,16 @@ g_cob <- cobertura |>
                      expand = expansion(mult = c(0, 0.14))) +
   labs(
     title    = "Casi ning\u00fan producto se vende en las siete cadenas a la vez",
-    subtitle = paste("Productos con c\u00f3digo de barras real, seg\u00fan en cuantas de las siete",
-                     "banderas aparecen.\nLa barra azul es la canasta comparable: los unicos",
-                     "productos que permiten comparar precios entre cadenas."),
+    subtitle = envolver(paste("Productos con c\u00f3digo de barras real, seg\u00fan en cuantas de las siete",
+                     "banderas aparecen.\nLa barra azul es la canasta comparable: los \u00fanicos",
+                     "productos que permiten comparar precios entre cadenas."), ANCHO_BAJADA),
     x        = "Cantidad de banderas en las que aparece el producto",
     y        = "Productos (cantidad)",
-    caption  = paste0(PIE_FUENTE,
-                      " Hipermercados de la Ciudad de Buenos Aires, 11 de septiembre de 2026.")
-  ) +
+    caption  = envolver(paste0(PIE_FUENTE,
+                      " Hipermercados de la Ciudad de Buenos Aires, 11 de septiembre de 2026."), ANCHO_PIE)) +
   tema_tp()
 
-guardar_grafico(g_cob, "02_cobertura_productos", ancho = 20, alto = 11)
+guardar_grafico(g_cob, "02_cobertura_productos", ancho = 24, alto = 13)
 
 
 cat("\nlisto. Ya se puede correr 03_faltantes_outliers.R\n")

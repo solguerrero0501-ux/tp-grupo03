@@ -82,6 +82,21 @@ guardar_grafico <- function(grafico, archivo, ancho = 22, alto = 13,
 }
 
 
+# Corte de lineas ----------------------------------------------------------
+# ggplot NO corta el texto que no entra: lo dibuja y lo recorta el borde de la
+# imagen. Una bajada o una nota al pie largas quedan mutiladas sin ningun
+# aviso. Esta funcion corta el texto en renglones de un ancho dado.
+#
+# Los anchos de abajo estan calibrados para una imagen de 24 cm con el cuerpo
+# de letra del tema. Si se cambia el ancho de un grafico hay que recalibrar.
+envolver <- function(texto, ancho) {
+  paste(strwrap(texto, width = ancho), collapse = "\n")
+}
+
+ANCHO_BAJADA <- 112   # para subtitle
+ANCHO_PIE    <- 150   # para caption
+
+
 # Pie de fuente ------------------------------------------------------------
 # La consigna pide la fuente del dato al pie de TODOS los graficos. Esta aca
 # para escribirla una sola vez y que diga exactamente lo mismo en los diez.
