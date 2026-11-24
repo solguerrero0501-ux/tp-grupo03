@@ -155,7 +155,7 @@ g_dist <- base |>
                 breaks = c(100, 1000, 10000, 100000, 1e6)) +
   scale_y_continuous(labels = function(x) formato_num(x)) +
   labs(
-    title    = "El precio de un producto de supermercado abarca cuatro \u00f3rdenes de magnitud",
+    title    = "El precio de un producto va de $0,01 a $13 millones",
     subtitle = envolver(paste("Distribuci\u00f3n del precio de lista de las", formato_num(sum(!is.na(p))),
                      "observaciones de la base, antes de cualquier limpieza."), ANCHO_BAJADA),
     x        = "Precio de lista (pesos, escala logar\u00edtmica)",
@@ -206,7 +206,7 @@ g_cob <- cobertura |>
                      expand = expansion(mult = c(0, 0.14))) +
   labs(
     title    = "Casi ning\u00fan producto se vende en las siete cadenas a la vez",
-    subtitle = envolver(paste("Productos con c\u00f3digo de barras real, seg\u00fan en cuantas de las siete",
+    subtitle = envolver(paste("Productos con c\u00f3digo de barras real, seg\u00fan en cuántas de las siete",
                      "banderas aparecen.\nLa barra azul es la canasta comparable: los \u00fanicos",
                      "productos que permiten comparar precios entre cadenas."), ANCHO_BAJADA),
     x        = "Cantidad de banderas en las que aparece el producto",

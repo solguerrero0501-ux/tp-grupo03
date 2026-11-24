@@ -218,7 +218,7 @@ g_crit <- data.frame(
     subtitle = envolver(paste("Observaciones marcadas como at\u00edpicas por cada criterio, sobre",
                      formato_num(sum(!is.na(p))), "precios.\nEl criterio elegido",
                      "es el tercero: comparar cada precio contra el de ese mismo",
-                     "producto\nen las demas sucursales."), ANCHO_BAJADA),
+                     "producto\nen las demás sucursales."), ANCHO_BAJADA),
     x        = "Criterio de detecci\u00f3n",
     y        = "Observaciones marcadas (escala logar\u00edtmica)",
     caption  = envolver(paste(PIE_FUENTE,

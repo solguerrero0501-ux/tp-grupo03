@@ -75,6 +75,15 @@ guardar_grafico <- function(grafico, archivo, ancho = 22, alto = 13,
                             formato = "png") {
   dir.create(carpeta, showWarnings = FALSE, recursive = TRUE)
   ruta <- file.path(carpeta, paste0(archivo, ".", formato))
+
+  # Control: un titulo demasiado largo no se parte, lo recorta el borde de la
+  # imagen y ggplot no avisa nada. Esto si avisa.
+  titulo <- grafico$labels$title
+  if (!is.null(titulo) && nchar(titulo) > LIMITE_TITULO) {
+    warning("el titulo de ", archivo, " tiene ", nchar(titulo),
+            " caracteres y entran ", LIMITE_TITULO,
+            ": se va a cortar. Acortalo.", call. = FALSE)
+  }
   ggplot2::ggsave(ruta, grafico, width = ancho, height = alto, units = "cm",
                   dpi = 300, bg = "white")
   message("  grafico guardado: ", ruta)
@@ -95,6 +104,11 @@ envolver <- function(texto, ancho) {
 
 ANCHO_BAJADA <- 112   # para subtitle
 ANCHO_PIE    <- 150   # para caption
+
+# El titulo NO se envuelve, porque partirlo en dos renglones queda feo. Hay
+# que escribirlo corto: medido sobre la salida real, en una imagen de 24 cm
+# entran unos 72 caracteres y a partir de ahi el borde lo corta.
+LIMITE_TITULO <- 72
 
 
 # Pie de fuente ------------------------------------------------------------
